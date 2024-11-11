@@ -12,7 +12,7 @@ class MyInfo extends StatelessWidget {
       child: Container(
         color: const Color(0xFF242430),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const Spacer(flex: 2),
             const CircleAvatar(
@@ -25,7 +25,7 @@ class MyInfo extends StatelessWidget {
               style: Theme.of(context).textTheme.titleSmall,
             ),
             const Text(
-              "Flutter developer  & founder of the flutter way.",
+              "Flutter developer  & founder of \n the flutter way.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w200,

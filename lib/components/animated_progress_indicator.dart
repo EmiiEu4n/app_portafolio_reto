@@ -49,4 +49,45 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
   }
 }
 
- 
+ class AnimatedLinearProgressIndicator extends StatelessWidget {
+  const AnimatedLinearProgressIndicator({
+    super.key,
+    required this.percentage,
+    required this.label,
+  });
+  final double percentage;
+  final String label;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: defaultPadding),
+      child: TweenAnimationBuilder(
+        tween: Tween<double>(begin: 0, end: percentage),
+        duration: defaultDuration,
+        builder: (context, value, child) => Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment
+                  .spaceBetween, //Deja espacios entre los hijos
+              children: [
+                Text(
+                  label,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                Text((value * 100).toInt().toString() + "%"),
+              ],
+            ),
+            const SizedBox(
+                //Deja un espacio entre elementos
+                height: defaultPadding / 2),
+            LinearProgressIndicator(
+              value: value,
+              color: primaryColor,
+              backgroundColor: darkColor,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

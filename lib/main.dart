@@ -1,4 +1,4 @@
-import 'package:app_portafolio_reto/screens/main/main_screen.dart';
+import 'package:app_portafolio_reto/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: const TextStyle(color: bodyTextColor),
             ),
       ),
-      home: MainScreen(),
+      home: HomeScreen(),
     );
   }
 }

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
+  const MainScreen({super.key, required this.children});
+  final List<Widget> children;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +13,7 @@ class MainScreen extends StatelessWidget {
         child: Container(
           constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // ahora cada uno toma el 50% sin el flex: 2
               Expanded(
@@ -21,11 +22,17 @@ class MainScreen extends StatelessWidget {
                 flex: 2,
                 child: SideMenu(),
               ),
+              SizedBox(width: defaultPadding),
               Expanded(
                 // este 7/9 = 0.78 significa 78% de ancho
                 flex: 7,
-                child: Container(
-                  color: Colors.blue,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...children
+                      //
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -35,4 +42,3 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
-
