@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "",
-      "type": "cppdbg",
+      "type": "",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
