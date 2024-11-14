@@ -20,7 +20,8 @@ class MainScreen extends StatelessWidget {
               leading: Builder(
                 builder: (context) => IconButton(
                   onPressed: () {
-                    Scaffold.of(context).openDrawer();  //para que esconda la parte del perfil y aparezca cuando le des al icono de menu
+                    Scaffold.of(context)
+                        .openDrawer(); //para que esconda la parte del perfil y aparezca cuando le des al icono de menu
                   },
                   icon: Icon(Icons.menu), //icono del menu
                 ),
@@ -29,6 +30,7 @@ class MainScreen extends StatelessWidget {
       drawer: SideMenu(),
       body: Center(
         child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
           constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

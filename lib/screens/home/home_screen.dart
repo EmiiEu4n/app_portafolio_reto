@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'components/home_banner.dart';
 import 'components/my_projects.dart';
-import 'heighlights.dart';
-import 'recommendation.dart';
+import 'components/heighlights.dart';
+import 'components/recommendation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

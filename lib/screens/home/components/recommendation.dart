@@ -1,8 +1,8 @@
 import 'package:app_portafolio_reto/models/Recommendation.dart';
-import 'package:app_portafolio_reto/screens/home/recommendations_card.dart';
+import 'package:app_portafolio_reto/screens/home/components/recommendations_card.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../../constants.dart';
 
 class Recommendations extends StatelessWidget {
   const Recommendations({

@@ -7,13 +7,13 @@ import 'project_card.dart';
 
 class MyProjects extends StatelessWidget {
   const MyProjects({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start, //MIn 11:34
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "My Projects",
@@ -22,14 +22,11 @@ class MyProjects extends StatelessWidget {
         const SizedBox(height: defaultPadding),
         Responsive(
           mobile: ProjectsGridView(
-            CrossAxisCount: 1,
-            childAspectRatio:
-                1.7, //para que no salgan ayas amarillas y negras a la hora de dejar mas chica la pantalla
+            crossAxisCount: 1,
+            childAspectRatio: 1.7,
           ),
-          mobileLarge: ProjectsGridView(CrossAxisCount: 2),
-          tablet: ProjectsGridView(
-            childAspectRatio: 1.1,
-          ),
+          mobileLarge: ProjectsGridView(crossAxisCount: 2),
+          tablet: ProjectsGridView(childAspectRatio: 1.1),
           desktop: ProjectsGridView(),
         )
       ],
@@ -39,12 +36,12 @@ class MyProjects extends StatelessWidget {
 
 class ProjectsGridView extends StatelessWidget {
   const ProjectsGridView({
-    super.key,
-    this.CrossAxisCount = 3,
+    Key? key,
+    this.crossAxisCount = 3,
     this.childAspectRatio = 1.3,
-  });
+  }) : super(key: key);
 
-  final int CrossAxisCount;
+  final int crossAxisCount;
   final double childAspectRatio;
 
   @override
@@ -52,15 +49,12 @@ class ProjectsGridView extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      itemCount: demo_projects.length, //se muestras 9 cuadros
+      itemCount: demo_projects.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount:
-            CrossAxisCount, //de 3 cuadros -> se cambio a CrossAxisCount
+        crossAxisCount: crossAxisCount,
         childAspectRatio: childAspectRatio,
-        crossAxisSpacing:
-            defaultPadding, //se agrega espacio vertical entre los cuadros
-        mainAxisSpacing:
-            defaultPadding, //se agrega espaciado horizontal entre los cuadros
+        crossAxisSpacing: defaultPadding,
+        mainAxisSpacing: defaultPadding,
       ),
       itemBuilder: (context, index) => ProjectCard(
         project: demo_projects[index],

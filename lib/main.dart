@@ -5,17 +5,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  const MyApp({super.key});
+
+  // Este widget es la raiz del proyecto
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      // we are using dark theme and we modify it as our need
+      // Se uso el tema dark
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
         scaffoldBackgroundColor: bgColor,
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: const TextStyle(color: bodyTextColor),
             ),
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
