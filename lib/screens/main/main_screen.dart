@@ -6,7 +6,8 @@ import 'components/side_menu.dart'; // Importa el menú lateral de la aplicació
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key, required this.children});
-  final List<Widget> children; // Lista de widgets que se mostrarán en la pantalla principal
+  final List<Widget>
+      children; // Lista de widgets que se mostrarán en la pantalla principal
 
   @override
   Widget build(BuildContext context) {
@@ -15,23 +16,30 @@ class MainScreen extends StatelessWidget {
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
-              backgroundColor: bgColor, // Cambia el color del AppBar en pantallas pequeñas
+              backgroundColor:
+                  bgColor, // Cambia el color del AppBar en pantallas pequeñas
               leading: Builder(
                 builder: (context) => IconButton(
                   onPressed: () {
-                    Scaffold.of(context).openDrawer(); // Abre el menú lateral cuando se presiona el icono
+                    Scaffold.of(context)
+                        .openDrawer(); // Abre el menú lateral cuando se presiona el icono
                   },
                   icon: Icon(Icons.menu), // Icono de menú en la barra superior
                 ),
               ),
             ),
-      drawer: SideMenu(), // Menú lateral que se muestra al presionar el ícono de menú en pantallas pequeñas
+      drawer:
+          SideMenu(), // Menú lateral que se muestra al presionar el ícono de menú en pantallas pequeñas
       body: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: defaultPadding), // Padding en los lados
-          constraints: const BoxConstraints(maxWidth: maxWidth), // Limita el ancho máximo de la pantalla a 1440px
+          padding: const EdgeInsets.only(
+              right: defaultPadding), // Padding a la derecha
+          constraints: const BoxConstraints(
+              maxWidth:
+                  maxWidth), // Limita el ancho máximo de la pantalla a 1440px
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start, // Alinea los widgets en la parte superior
+            crossAxisAlignment: CrossAxisAlignment
+                .start, // Alinea los widgets en la parte superior
             children: [
               if (Responsive.isDesktop(context))
                 // Si la pantalla es de escritorio, muestra el menú lateral
@@ -39,9 +47,12 @@ class MainScreen extends StatelessWidget {
                   flex: 2, // El menú lateral toma el 22% del ancho disponible
                   child: SideMenu(),
                 ),
-              SizedBox(width: defaultPadding), // Espacio entre el menú lateral y el contenido principal
+              SizedBox(
+                  width:
+                      defaultPadding), // Espacio entre el menú lateral y el contenido principal
               Expanded(
-                flex: 7, // El contenido principal toma el 78% del ancho disponible
+                flex:
+                    7, // El contenido principal toma el 78% del ancho disponible
                 child: SingleChildScrollView(
                   // Permite que el contenido principal sea desplazable si es necesario
                   child: Column(

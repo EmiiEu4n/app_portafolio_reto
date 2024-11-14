@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   // Este widget es la raíz del proyecto. Toda la aplicación parte de aquí.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( 
       debugShowCheckedModeBanner: false, // Oculta la etiqueta de modo de depuración
       title: 'Flutter Demo', // Título de la aplicación
 

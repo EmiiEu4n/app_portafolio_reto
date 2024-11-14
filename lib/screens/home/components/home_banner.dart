@@ -4,13 +4,13 @@ import 'package:flutter/material.dart'; // Importa la biblioteca de Flutter para
 
 import '../../../constants.dart'; // Importa las constantes definidas, como colores y márgenes.
 
-class HomeBanner extends StatelessWidget { // Define un widget Stateless que representa un banner en la página principal.
+class HomeBanner extends StatelessWidget { // Define un widget Stateless que representa un banner en la página principal. Sin estado
   const HomeBanner({ // Constructor del widget HomeBanner.
     super.key, // Recibe un parámetro opcional de clave.
   });
 
   @override
-  Widget build(BuildContext context) { // Método build que crea la interfaz de usuario del widget.
+  Widget build(BuildContext context) { // Método build que crea la interfaz de usuario del widget. Build-como se debe de ver el widget y como se organizan
     return AspectRatio( // Ajusta el aspecto de la sección del banner.
       aspectRatio: Responsive.isMobile(context) ? 2.5 : 3, // Cambia la relación de aspecto según si el dispositivo es móvil.
       child: Stack( // Utiliza un Stack para superponer widgets dentro del banner.
