@@ -13,16 +13,16 @@ class AreaInfoText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: defaultPadding / 2),
+      padding: const EdgeInsets.only(bottom: defaultPadding / 2), // Espaciado inferior
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espaciado entre los elementos
         children: [
           Text(
-            title!,
-            style: const TextStyle(color: Colors.white),
+            title!, // Muestra el título (no puede ser nulo)
+            style: const TextStyle(color: Colors.white), // Color blanco para el título
           ),
           Text(
-            text!,
+            text!, // Muestra el texto (no puede ser nulo)
           )
         ],
       ),

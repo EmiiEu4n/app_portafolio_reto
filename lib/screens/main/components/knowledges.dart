@@ -13,16 +13,16 @@ class Knowledges extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Divider(),
+        const Divider(), // Línea divisora para separar secciones
         Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: defaultPadding),
+          padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
-            "Knowledges",
-            style: Theme.of(context).textTheme.bodyMedium,
+            "Knowledges", // Título de la sección
+            style: Theme.of(context).textTheme.bodyMedium, // Estilo de texto
           ),
         ),
-        const KnowledgeText(text: "Flutter, dart"),
+        // Lista de conocimientos
+        const KnowledgeText(text: "Flutter, Dart"),
         const KnowledgeText(text: "Stylus, Sass, Less"),
         const KnowledgeText(text: "Gulp, Webpack, Grunt"),
         const KnowledgeText(text: "GIT Knowledge"),
@@ -31,21 +31,24 @@ class Knowledges extends StatelessWidget {
   }
 }
 
+
 class KnowledgeText extends StatelessWidget {
   const KnowledgeText({
     super.key,
-    required this.text,
+    required this.text, // El conocimiento o habilidad que se muestra
   });
+  
   final String text;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: defaultPadding / 2),
+      padding: const EdgeInsets.only(bottom: defaultPadding / 2), // Espaciado entre elementos
       child: Row(
         children: [
-          SvgPicture.asset("assets/icons/check.svg"),
-          const SizedBox(width: defaultPadding / 2),
-          Text(text),
+          SvgPicture.asset("assets/icons/check.svg"), // Ícono de verificación
+          const SizedBox(width: defaultPadding / 2), // Espacio entre el ícono y el texto
+          Text(text), // El texto que representa el conocimiento
         ],
       ),
     );

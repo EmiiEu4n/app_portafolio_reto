@@ -13,81 +13,81 @@ class HighLightsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-      child: Responsive.isMobileLarge(context)
-          ? const Column(
+      padding: const EdgeInsets.symmetric(vertical: defaultPadding), // Agrega espacio vertical en la parte superior e inferior
+      child: Responsive.isMobileLarge(context) // Verifica si el dispositivo es grande (típico en móviles)
+          ? const Column( // Si es un dispositivo móvil grande, organiza los elementos en columnas
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Row( // Primer fila con dos elementos
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espacio entre los elementos
                   children: [
                     HeighLight(
                       counter: AnimatedCounter(
-                        value: 119, //valor final que mostrara el contador
-                        text: "K+", //texto adicional que se mostrara
+                        value: 119, // Valor final para el contador (subscribers)
+                        text: "K+", // Texto adicional para los miles
                       ),
-                      label: "Subscribers",
+                      label: "Subscribers", // Etiqueta que se muestra
                     ),
                     HeighLight(
                       counter: AnimatedCounter(
-                        value: 40, //valor final que mostrara el contador
-                        text: "+", //texto adicional que se mostrara
+                        value: 40, // Valor final para el contador (videos)
+                        text: "+", // Texto adicional para indicar más
                       ),
-                      label: "Videos",
+                      label: "Videos", // Etiqueta que se muestra
                     ),
                   ],
                 ),
-                SizedBox(height: defaultPadding),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                SizedBox(height: defaultPadding), // Espacio entre las filas
+                Row( // Segunda fila con dos elementos
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espacio entre los elementos
                   children: [
                     HeighLight(
                       counter: AnimatedCounter(
-                        value: 30, //valor final que mostrara el contador
-                        text: "+", //texto adicional que se mostrara
+                        value: 30, // Valor final para el contador (GitHub projects)
+                        text: "+", // Texto adicional
                       ),
-                      label: "GitHub Projects",
+                      label: "GitHub Projects", // Etiqueta que se muestra
                     ),
                     HeighLight(
                       counter: AnimatedCounter(
-                        value: 13, //valor final que mostrara el contador
-                        text: "K+", //texto adicional que se mostrara
+                        value: 13, // Valor final para el contador (stars)
+                        text: "K+", // Texto adicional para los miles
                       ),
-                      label: "Stars",
+                      label: "Stars", // Etiqueta que se muestra
                     ),
                   ],
                 ),
               ],
             )
-          : const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          : const Row( // Si no es un dispositivo móvil grande, organiza los elementos en una fila
+              mainAxisAlignment: MainAxisAlignment.spaceBetween, // Espacio entre los elementos
               children: [
                 HeighLight(
                   counter: AnimatedCounter(
-                    value: 119,
-                    text: "K+",
+                    value: 119, // Valor para el contador (subscribers)
+                    text: "K+", // Texto adicional para los miles
                   ),
-                  label: "Subscribers",
+                  label: "Subscribers", // Etiqueta que se muestra
                 ),
                 HeighLight(
                   counter: AnimatedCounter(
-                    value: 40,
-                    text: "+",
+                    value: 40, // Valor para el contador (videos)
+                    text: "+", // Texto adicional
                   ),
-                  label: "Videos",
+                  label: "Videos", // Etiqueta que se muestra
                 ),
                 HeighLight(
                   counter: AnimatedCounter(
-                    value: 30,
-                    text: "+",
+                    value: 30, // Valor para el contador (GitHub projects)
+                    text: "+", // Texto adicional
                   ),
-                  label: "GitHub Projects",
+                  label: "GitHub Projects", // Etiqueta que se muestra
                 ),
                 HeighLight(
                   counter: AnimatedCounter(
-                    value: 13,
-                    text: "K+",
+                    value: 13, // Valor para el contador (stars)
+                    text: "K+", // Texto adicional para los miles
                   ),
-                  label: "Stars",
+                  label: "Stars", // Etiqueta que se muestra
                 ),
               ],
             ),

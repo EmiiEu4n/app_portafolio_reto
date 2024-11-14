@@ -1,57 +1,52 @@
-import 'package:app_portafolio_reto/constants.dart';
-import 'package:app_portafolio_reto/responsive.dart';
-import 'package:flutter/material.dart';
+import 'package:app_portafolio_reto/constants.dart'; // Importa las constantes de color y otros valores
+import 'package:app_portafolio_reto/responsive.dart'; // Importa la clase Responsive para el diseño responsivo
+import 'package:flutter/material.dart'; // Importa el paquete de Flutter para interfaces de usuario
 
-import 'components/side_menu.dart';
+import 'components/side_menu.dart'; // Importa el menú lateral de la aplicación
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key, required this.children});
-  final List<Widget> children;
+  final List<Widget> children; // Lista de widgets que se mostrarán en la pantalla principal
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //We hide the appbar on desktop
-      appBar: Responsive.isDesktop(
-              context) //cuando la pantalla sea mas pequeña aparezca la barra con el icono del menu
+      // Oculta el AppBar en pantallas de escritorio
+      appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
-              backgroundColor:
-                  bgColor, //cambiar el color en la parte del icono del boton
+              backgroundColor: bgColor, // Cambia el color del AppBar en pantallas pequeñas
               leading: Builder(
                 builder: (context) => IconButton(
                   onPressed: () {
-                    Scaffold.of(context)
-                        .openDrawer(); //para que esconda la parte del perfil y aparezca cuando le des al icono de menu
+                    Scaffold.of(context).openDrawer(); // Abre el menú lateral cuando se presiona el icono
                   },
-                  icon: Icon(Icons.menu), //icono del menu
+                  icon: Icon(Icons.menu), // Icono de menú en la barra superior
                 ),
               ),
             ),
-      drawer: SideMenu(),
+      drawer: SideMenu(), // Menú lateral que se muestra al presionar el ícono de menú en pantallas pequeñas
       body: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-          constraints: const BoxConstraints(maxWidth: maxWidth),
+          padding: const EdgeInsets.symmetric(horizontal: defaultPadding), // Padding en los lados
+          constraints: const BoxConstraints(maxWidth: maxWidth), // Limita el ancho máximo de la pantalla a 1440px
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start, // Alinea los widgets en la parte superior
             children: [
               if (Responsive.isDesktop(context))
-                // ahora cada uno toma el 50% sin el flex: 2
+                // Si la pantalla es de escritorio, muestra el menú lateral
                 Expanded(
-                  //ahora este toma el 75%
-                  //ahora este toma (2+7 = 9) entonces 2/9=0.22 significa 22%
-                  flex: 2,
+                  flex: 2, // El menú lateral toma el 22% del ancho disponible
                   child: SideMenu(),
                 ),
-              SizedBox(width: defaultPadding),
+              SizedBox(width: defaultPadding), // Espacio entre el menú lateral y el contenido principal
               Expanded(
-                // este 7/9 = 0.78 significa 78% de ancho
-                flex: 7,
+                flex: 7, // El contenido principal toma el 78% del ancho disponible
                 child: SingleChildScrollView(
+                  // Permite que el contenido principal sea desplazable si es necesario
                   child: Column(
                     children: [
-                      ...children
-                      //
+                      ...children // Inserta los widgets hijos pasados a MainScreen
                     ],
                   ),
                 ),
